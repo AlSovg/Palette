@@ -1,0 +1,81 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__header {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__picker {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  &__color {
+    width: 50px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__select {
+    padding: 0.25rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  &__palette {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    margin-top: 1rem;
+  }
+
+  &__colorBox {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    cursor: copy;
+    transition: 0.3s;
+    &:hover{
+      border-color: #000;
+    }
+
+  }
+}
+
+
+.blockBtn{
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  cursor: pointer;
+  &__icon{
+    width: 30px;
+    height: 30px;
+  }
+}
