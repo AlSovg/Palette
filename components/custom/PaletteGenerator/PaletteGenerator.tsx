@@ -20,8 +20,20 @@ export const PaletteGenerator: React.FC = () => {
             }
         };
         document.addEventListener("keydown", handleKeyDown);
+
         return () => document.removeEventListener("keydown", handleKeyDown);
     }, [regenerate]);
+
+    React.useEffect(() => {
+        const event = new KeyboardEvent("keydown", {
+            key: " ",
+            code: "Space",
+            keyCode: 32,
+            which: 32,
+            bubbles: true,
+        });
+        document.dispatchEvent(event);
+    }, []);
 
 
 

@@ -27,7 +27,11 @@ export function usePalette(baseColor: string, type: PaletteType) {
     }, []);
 
     const regenerate = () => {
-        const newColors = generatePalette(baseColor, type, colors);
+        let prevColors = colors;
+        if (!prevColors.length){
+            prevColors = generatePalette(baseColor, type);
+        }
+        const newColors = generatePalette(baseColor, type, prevColors);
         setColors(newColors);
         localStorage.setItem("colors", JSON.stringify(newColors));
     };
