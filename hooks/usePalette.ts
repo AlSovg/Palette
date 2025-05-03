@@ -7,9 +7,12 @@ export function usePalette(baseColor: string, type: PaletteType) {
     const [colors, setColors] = React.useState<GeneratedColor[]>([]);
 
     React.useEffect(() => {
-        const newColors = generatePalette(baseColor, type);
-        setColors(newColors);
-        localStorage.setItem("colors", JSON.stringify(newColors));
+        if (baseColor != "#3498db"){
+            const newColors = generatePalette(baseColor, type);
+            setColors(newColors);
+            localStorage.setItem("colors", JSON.stringify(newColors));
+        }
+
     }, [baseColor, type]);
 
     React.useEffect(() => {
