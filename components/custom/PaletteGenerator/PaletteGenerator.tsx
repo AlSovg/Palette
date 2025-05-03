@@ -89,6 +89,7 @@ export const PaletteGenerator: React.FC = () => {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 toggleBlock(idx)
+                                e.currentTarget.blur();
                             }}
                         >
                             {col.isBlocked ? (<Lock className={styles.blockBtn__icon} width={70}

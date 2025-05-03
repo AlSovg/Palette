@@ -26,13 +26,12 @@ export function generatePalette(
     type: PaletteType,
     prev?: GeneratedColor[]
 ): GeneratedColor[] {
-    console.log(!!prev)
     return prev
         ? prev.map((color) => {
             const wasBlocked = color.isBlocked;
             const oldColor = color.color;
             return {
-                color: wasBlocked ? oldColor : addColorVariation(color.color, 0.05),
+                color: wasBlocked ? oldColor : addColorVariation(oldColor, 0.05),
                 isBlocked: wasBlocked
             };
         })
